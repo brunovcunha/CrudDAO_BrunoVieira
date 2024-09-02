@@ -27,12 +27,12 @@ public class TaskDao {
 
     public void createTask(Task task) {
         String sql = "INSERT INTO tb_Funcionario (nome, cargo, data_contratacao) VALUES (?, ?, ?)";
-        jdbcTemplate.update(sql, task.getNome(), task.getCargo(), task.getData_contratacao());
+        jdbcTemplate.update(sql, task.getNome(), task.getCargo(), task.getDataContratacao());
     }
 
     public void updateTask(Task task) {
         String sql = "UPDATE tb_Funcionario SET nome = ?, cargo = ?, data_contratacao = ? WHERE id = ?";
-        jdbcTemplate.update(sql, task.getNome(), task.getCargo(), task.getData_contratacao(), task.getId());
+        jdbcTemplate.update(sql, task.getNome(), task.getCargo(), task.getDataContratacao(), task.getId());
     }
 
     public void deleteTask(Long id) {

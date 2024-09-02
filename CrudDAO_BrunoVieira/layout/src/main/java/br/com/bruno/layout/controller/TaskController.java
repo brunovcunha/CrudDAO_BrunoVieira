@@ -25,15 +25,14 @@ public class TaskController {
     }
 
     @PostMapping("/create")
-public String createOrUpdate(Task task) {
-    if (task.getId() == null) {
-        taskDao.createTask(task);
-    } else {
-        taskDao.updateTask(task);
+    public String createOrUpdate(Task task) {
+        if (task.getId() == null) {
+            taskDao.createTask(task);
+        } else {
+            taskDao.updateTask(task);
+        }
+        return "redirect:/list";
     }
-    return "redirect:/list";
-}
-
 
     @GetMapping("/list")
     public ModelAndView list() {
